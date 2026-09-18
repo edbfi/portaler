@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   check-conditions:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       issues: write
     steps:
@@ -33,7 +33,7 @@ jobs:
   create-platform:
     needs: check-conditions
     if: github.event.issue.user.login == 'edbfi' && contains(github.event.issue.labels.*.name, 'platform-request')
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     permissions:
       contents: write
