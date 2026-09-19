@@ -58,3 +58,14 @@ Repair recovery has an explicit disabled policy in `.github/repair-policy.json`,
 preserving the previous absence of an opt-in. The existing Biome App repair
 workflow remains installed; its publication must produce both required CI and
 policy checks. Shared workflows, actions and Renovate policy are pinned to v3.0.1.
+
+## TypeScript compiler compatibility
+
+`typescript` retains the 6.x JavaScript compiler API for framework tooling.
+`@typescript/native` aliases the stable TypeScript 7 package for the documented
+`svelte-check --tsgo` path. The required `check` command runs both the existing
+checker and native mode; neither may fail or be skipped. Keep the direct TS7
+replacement PR on hold: replacing `typescript` removes the API used by the
+existing tooling. Native checker updates are independently locked and frozen.
+
+Upstream setup: https://github.com/sveltejs/language-tools/tree/master/packages/svelte-check#typescript-7-supports
