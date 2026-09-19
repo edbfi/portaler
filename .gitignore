@@ -33,3 +33,6 @@ pnpm-debug.log*
 .clinerules
 .cursorrules
 .windsurfrules
+
+# Generated virtual TypeScript files from svelte-check --tsgo
+.svelte-check/
