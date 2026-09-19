@@ -7,9 +7,12 @@ merge bypass. The aggregate directly requires guard, quality and smoke. Policy
 checks Conventional Commit titles, author-matching DCO sign-offs, holds and reviews;
 label and review events refresh it independently of application CI.
 
-Renovate is the sole ongoing dependency merge owner. Automerge remains explicitly
-disabled during the v3 canary, until enforcement and a real native Renovate merge
-are proven. The retired Actions merger and `/merge` commands are no longer used.
+Renovate is the sole ongoing dependency merge owner after the protected native
+canary [automation#39](https://github.com/edbfi/automation/pull/39). Native PR rebase
+merging requires complete current-head CI and policy checks, up-to-date branches,
+release ages, review requirements and hold labels. The TypeScript 7 hold remains
+in place; shared automation configuration updates remain manual. The retired
+Actions merger and `/merge` commands are no longer used.
 PR and final-CI dispatches still verify the requested current revision at both gates.
 
 Locally run `bun install --frozen-lockfile`, `bash .github/scripts/check.sh`, then
@@ -54,4 +57,4 @@ configuration files; unrelated extension paths are excluded.
 Repair recovery has an explicit disabled policy in `.github/repair-policy.json`,
 preserving the previous absence of an opt-in. The existing Biome App repair
 workflow remains installed; its publication must produce both required CI and
-policy checks. Shared workflows, actions and Renovate policy are pinned to v3.0.0.
+policy checks. Shared workflows, actions and Renovate policy are pinned to v3.0.1.
