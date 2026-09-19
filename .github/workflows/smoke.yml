@@ -1,6 +1,11 @@
 name: smoke
 'on':
-  workflow_call: null
+  workflow_call:
+    inputs:
+      use-artifact:
+        description: Reuse the build produced by the calling CI workflow
+        type: boolean
+        default: false
   workflow_dispatch: null
 permissions:
   contents: read
@@ -20,10 +25,20 @@ jobs:
       with:
         bun-version-file: package.json
     - run: bun install --frozen-lockfile
+    - name: Build for standalone smoke
+      if: ${{ !inputs.use-artifact }}
+      run: bun run build
     - uses: actions/download-artifact@v8.0.1
+      if: inputs.use-artifact
       with:
         name: site-dist
         path: dist/
-    - run: bash .github/scripts/smoke.sh
+    - uses: edbfi/automation/actions/smoke@v3.0.0
+      with:
+        start-command: PORT=4321 bun run scripts/serve-dist.ts
+        url: http://127.0.0.1:4321/
+        test-command: bash .github/scripts/smoke.sh --assert-only
+        timeout-seconds: 90
+        test-timeout-seconds: 60
     - name: Reject tracked-file mutations
       run: git diff --exit-code HEAD
