@@ -29,18 +29,15 @@ Run tests from the repo root: `tests/catalog.test.ts` globs `src/content/...` re
 
 ## Workflows
 
-### Add or rename a subject (all four must match; `tests/catalog.test.ts` enforces it)
+### Add or rename a subject (all three must match; `tests/catalog.test.ts` enforces it)
 
 1. `src/content/subjects/<slug>.json` (`name` = slug, `displayName`, `order`).
 2. The `subjectSlugs` array in `src/content.config.ts`. The test parses it with a regex, so keep it a literal `const subjectSlugs = [...] as const`.
 3. `SUBJECT_META` in `src/lib/subjects.ts` (OKLCH `accent`, `i-lucide-*` icon).
-4. The `subject` dropdown `options` in `.github/ISSUE_TEMPLATE/new-platform.yml`.
-
-README lists only steps 1–3.
 
 ### Add a platform
 
-Add `src/content/platforms/<publisher-slug>/<name-slug>.json` using the shape in README "Adding a platform". Owner-filed issues from `new-platform.yml` generate the file and a PR through `scripts/platform-request.ts` (`.github/workflows/platform-request.yml`). If you change the issue form headings, update the parser and `tests/platform-request.test.ts` too.
+Add `src/content/platforms/<publisher-slug>/<name-slug>.json` using the shape in README "Adding a platform".
 
 ## Gotchas
 
