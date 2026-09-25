@@ -27,18 +27,8 @@ fixtures reject absent, stale, failed and wrong-provenance CI. CI rejects
 tracked-file mutations. The Zod URL deprecation is an existing hint. Browser hydration/search interactions and live
 third-party platform availability remain manual coverage gaps.
 
-Fixtures cover school grade boundaries, parity between subject data/schema/style
-metadata/issue choices, real issue headings, checked grades, multiline text, unsafe
-URL protocols, missing fields and safe generated paths. The issue form now offers
-only supported subject slugs. Platform requests remain restricted to `edbfi`.
-The writer treats issue text as data, rejects duplicate names/URLs and existing
-paths, formats only the generated JSON and proposes a signed-off PR per issue.
-It explicitly dispatches application CI for the exact PR SHA with `GITHUB_TOKEN`;
-failures report manual recovery inputs. That token can suppress PR events, so its
-generated head remains blocked until a supported App/user update also starts the
-required PR policy check. Dispatching application CI does not bypass policy.
-Enable **Allow GitHub Actions to create and approve pull requests**. No live issue, comment, PR or catalog addition is created in local
-tests. GitHub Pages publishes only a successful default-branch CI artifact, with
+Fixtures cover school grade boundaries and parity between subject data, schema
+and style metadata. GitHub Pages publishes only a successful default-branch CI artifact, with
 the `portaler.edb.fi` domain. Successful default-branch CI starts the publisher
 through `workflow_run`. The publisher verifies the event repository, branch, workflow, newest run and attempt
 for the exact current main commit, then downloads that run's validated artifact.

@@ -12,7 +12,7 @@ test("school phases cover each grade once and reject invalid grades", () => {
   expect(phaseOf(7)?.id).toBe("udskoling");
   expect(subjectMeta("missing")).toEqual(SUBJECT_META.andre);
 });
-test("subject data, schema, presentation and issue dropdown use the same keys", () => {
+test("subject data, schema and presentation use the same keys", () => {
   const subjects = [...new Bun.Glob("src/content/subjects/*.json").scanSync(".")]
     .map((file) => JSON.parse(readFileSync(file, "utf8")).name)
     .sort();
@@ -23,10 +23,4 @@ test("subject data, schema, presentation and issue dropdown use the same keys", 
   expect(schema).not.toBeNull();
   const keys = [...(schema?.[1] ?? "").matchAll(/"([^"]+)"/g)].map((match) => match[1]).sort();
   expect(keys).toEqual(subjects);
-  const form = Bun.YAML.parse(readFileSync(".github/ISSUE_TEMPLATE/new-platform.yml", "utf8")) as {
-    body: { id?: string; attributes?: { options?: string[] } }[];
-  };
-  expect(form.body.find((field) => field.id === "subject")?.attributes?.options?.sort()).toEqual(
-    subjects,
-  );
 });
