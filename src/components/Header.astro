@@ -4,22 +4,10 @@ import logo from "../assets/str_logo_icon.svg";
 import ThemeToggle from "./ThemeToggle.svelte";
 ---
 
-<header
-  class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md"
->
+<header class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-    <a
-      href="/"
-      class="ui-focus group flex items-center gap-3 rounded-lg"
-      aria-label="Til forsiden"
-    >
-      <Image
-        src={logo}
-        alt=""
-        width={36}
-        height={36}
-        class="logo-mark h-9 w-9 shrink-0"
-      />
+    <a href="/" class="ui-focus group flex items-center gap-3 rounded-lg" aria-label="Til forsiden">
+      <Image src={logo} alt="" width={36} height={36} class="logo-mark h-9 w-9 shrink-0" />
       <span class="flex flex-col leading-none">
         <span class="font-display text-lg font-semibold tracking-tight text-foreground"
           >Digitale læremidler</span
@@ -33,37 +21,37 @@ import ThemeToggle from "./ThemeToggle.svelte";
 </header>
 
 <style>
-  /* The logo is a radially symmetric "bloom" — so it moves by turning, not
+/* The logo is a radially symmetric "bloom" — so it moves by turning, not
      fading. It unfurls once on load, then gives a gentle turn-and-grow when
      you hover the link on the way to the front page. */
+.logo-mark {
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: logo-bloom 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.group:hover .logo-mark {
+  transform: rotate(60deg) scale(1.08);
+}
+
+@keyframes logo-bloom {
+  from {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Honour users who ask for less motion: no entrance spin, no hover turn. */
+@media (prefers-reduced-motion: reduce) {
   .logo-mark {
-    transform-origin: center;
-    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    animation: logo-bloom 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation: none;
   }
-
   .group:hover .logo-mark {
-    transform: rotate(60deg) scale(1.08);
+    transform: none;
   }
-
-  @keyframes logo-bloom {
-    from {
-      opacity: 0;
-      transform: rotate(-45deg) scale(0.6);
-    }
-    to {
-      opacity: 1;
-      transform: rotate(0) scale(1);
-    }
-  }
-
-  /* Honour users who ask for less motion: no entrance spin, no hover turn. */
-  @media (prefers-reduced-motion: reduce) {
-    .logo-mark {
-      animation: none;
-    }
-    .group:hover .logo-mark {
-      transform: none;
-    }
-  }
+}
 </style>

@@ -112,3 +112,12 @@ Licensed under the AGPLv3 — see [LICENSE](LICENSE).
 		<img src="src/assets/agplv3_icon.png" alt="GNU AGPLv3">
 	</a>
 </div>
+
+## Biome configuration
+
+`biome.json` uses the pinned Biome version, Git ignore rules, recommended lint and
+import-organizing rules, and the repository's two-space, 100-column style. Run
+`bun run lint` to check or `bun run lint:fix` to apply formatting and safe fixes.
+
+Svelte and Astro formatting and markup checks use Biome's experimental HTML
+support. Keep `bun run check` as the framework/type check.
