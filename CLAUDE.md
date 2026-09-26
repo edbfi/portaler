@@ -45,7 +45,7 @@ Add `src/content/platforms/<publisher-slug>/<name-slug>.json` using the shape in
 - For per-subject colour, set an inline `--sa` CSS var and use `text-[var(--sa)]`-style utilities (see `PlatformCard.svelte`). Semantic colour tokens are CSS vars in `src/styles/global.css` and are mapped in `uno.config.ts`.
 - Write internal links without a trailing slash (`/grade/3`, `/fag/dansk`). They depend on `build.format: "file"` in `astro.config.mjs`, and changing either one breaks live URLs.
 - Theme is a `.dark` class on `<html>`, set before paint by the inline script in `src/layouts/Layout.astro`, with `localStorage.theme` as the key. Style dark mode with `dark:` variants; change theme init in that inline script, not in an island.
-- Keep both `typescript` (6.x) and `@typescript/native` (7.x). The TS 7 swap is on hold because the tooling needs the TS 6 API (see `CI.md`).
+- Keep both `typescript` (6.x) and `@typescript/native` (7.x). The TS 7 swap is on hold because the tooling needs the TS 6 API.
 - CI runs `biome ci` (read-only) and then fails on any tracked-file diff. Run `bun run lint:fix` before pushing.
 - Commits must use Conventional Commit titles and carry a `Signed-off-by` that matches the author (`git commit -s`). `prek.toml` also blocks commits to `main` and runs `bun run check` on pre-push.
 
