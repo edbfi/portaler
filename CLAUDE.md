@@ -8,13 +8,11 @@ Static Astro 7 site (GitHub Pages, `portaler.edb.fi`) listing school learning pl
 
 | Task | Command |
 | --- | --- |
-| Full local CI gate | `bash .github/scripts/check.sh` (biome ci, check, bun tests, Python tests, build) |
-| Route smoke test (after build) | `bash .github/scripts/smoke.sh` |
+| Full local check | `bunx --bun biome ci .`, `bun run check`, `bun run test`, `bun run build` |
 | Lint (read-only) / autofix | `bun run lint` / `bun run lint:fix` |
 | Typecheck | `bun run check` (astro check + svelte-check twice: TS 6 API and `--tsgo`) |
 | Bun tests | `bun run test` |
 | Single test file / case | `bun test tests/catalog.test.ts` / `bun test tests/catalog.test.ts -t "school phases"` |
-| Python deployment tests | `python3 -B -m unittest discover -s tests -p 'test_*.py'` (one case: add `-k test_current_successful`) |
 | Serve built `dist/` | `bun run scripts/serve-dist.ts` (mirrors Pages extensionless routes; `astro preview` daemonizes in Astro 7) |
 
 Run tests from the repo root: `tests/catalog.test.ts` globs `src/content/...` relative to cwd.
@@ -46,7 +44,7 @@ Add `src/content/platforms/<publisher-slug>/<name-slug>.json` using the shape in
 - Write internal links without a trailing slash (`/grade/3`, `/fag/dansk`). They depend on `build.format: "file"` in `astro.config.mjs`, and changing either one breaks live URLs.
 - Theme is a `.dark` class on `<html>`, set before paint by the inline script in `src/layouts/Layout.astro`, with `localStorage.theme` as the key. Style dark mode with `dark:` variants; change theme init in that inline script, not in an island.
 - Keep both `typescript` (6.x) and `@typescript/native` (7.x). The TS 7 swap is on hold because the tooling needs the TS 6 API.
-- CI runs `biome ci` (read-only) and then fails on any tracked-file diff. Run `bun run lint:fix` before pushing.
+- Run `bun run lint:fix` before pushing; `bunx --bun biome ci .` is the read-only check.
 - Commits must use Conventional Commit titles and carry a `Signed-off-by` that matches the author (`git commit -s`). `prek.toml` also blocks commits to `main` and runs `bun run check` on pre-push.
 
 ## Reference
