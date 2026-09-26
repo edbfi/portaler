@@ -31,13 +31,11 @@ const phaseText: Record<PhaseId, string> = {
     </a>
 
     <header class="mb-6">
-      {
-        phase && (
-          <p class={`mb-1 text-sm font-semibold tracking-wide uppercase ${phaseText[phase.id]}`}>
-            {phase.label}
-          </p>
-        )
-      }
+      {phase && (
+  <p class={`mb-1 text-sm font-semibold tracking-wide uppercase ${phaseText[phase.id]}`}>
+    {phase.label}
+  </p>
+)}
       <h1 class="font-display text-3xl font-bold text-foreground sm:text-4xl">
         {gradeLabel(grade)}
       </h1>

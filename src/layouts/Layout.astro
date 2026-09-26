@@ -22,40 +22,40 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <!doctype html>
 <html lang="da">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href={logo.src} />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content={description}>
+    <link rel="icon" type="image/svg+xml" href={logo.src}>
+    <meta name="generator" content={Astro.generator}>
 
     {/* Light is the default; dark applies only when the user has explicitly
         chosen it. The static tag below is the no-JS fallback (the common case);
         the inline script flips both the class and the browser-chrome colour to
         match the stored choice before first paint, so there is no flash. */}
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff">
     <script is:inline>
-      (function () {
-        try {
-          var dark = localStorage.getItem("theme") === "dark";
-          document.documentElement.classList.toggle("dark", dark);
-          var meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.setAttribute("content", dark ? "#171717" : "#ffffff");
-        } catch (e) {}
-      })();
+    (() => {
+      try {
+        const dark = localStorage.getItem("theme") === "dark";
+        document.documentElement.classList.toggle("dark", dark);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", dark ? "#171717" : "#ffffff");
+      } catch {}
+    })();
     </script>
 
     <title>{title}</title>
-    <link rel="canonical" href={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content="da_DK" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <link rel="canonical" href={canonical}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonical}>
+    <meta property="og:locale" content="da_DK">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
 
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow">
   </head>
   <body class="flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
     <Header />

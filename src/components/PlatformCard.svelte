@@ -45,7 +45,7 @@ const moreInfo = $derived.by(() => {
   <div class="flex items-center gap-2">
     <span class="ui-chip">
       {#if logo}
-        <img src={logo} alt="" class="h-3.5 w-auto max-w-5 object-contain" />
+        <img src={logo} alt="" class="h-3.5 w-auto max-w-5 object-contain">
       {/if}
       {item.publisher}
     </span>
@@ -58,9 +58,7 @@ const moreInfo = $derived.by(() => {
     <div class="mt-auto flex flex-wrap gap-1.5 pt-1">
       {#each item.grades as grade (grade)}
         <span
-          class="inline-flex items-center rounded-md px-1.5 py-0.5 text-xs font-medium {currentGrade === grade
-            ? 'bg-[var(--sa)]/12 text-[var(--sa)]'
-            : 'bg-muted text-muted-foreground'}"
+          class="inline-flex items-center rounded-md px-1.5 py-0.5 text-xs font-medium {currentGrade === grade ? "bg-[var(--sa)]/12 text-[var(--sa)]" : "bg-muted text-muted-foreground"}"
         >
           {grade}.
         </span>

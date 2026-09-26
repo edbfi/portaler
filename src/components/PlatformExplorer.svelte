@@ -93,7 +93,7 @@ function reset() {
           bind:value={query}
           placeholder="Navn, fag eller forlag…"
           class="ui-focus w-full rounded-xl border border-border bg-background py-2.5 pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground"
-        />
+        >
       </div>
     </div>
 
@@ -117,7 +117,8 @@ function reset() {
   </div>
 
   <p class="mb-5 text-sm text-muted-foreground" aria-live="polite">
-    Viser {filtered.length} af {platforms.length} {platforms.length === 1 ? "platform" : "platforme"}
+    Viser {filtered.length} af {platforms.length}
+    {platforms.length === 1 ? "platform" : "platforme"}
   </p>
 
   {#if groups.length > 0}

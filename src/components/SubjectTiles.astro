@@ -25,28 +25,26 @@ const subjects = subjectEntries
 ---
 
 <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-  {
-    subjects.map((subject) => (
-      <li>
-        <a
-          href={`/fag/${subject.slug}`}
-          style={`--sa: ${subject.accent}`}
-          class="ui-card ui-focus group flex h-full items-center gap-3 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--sa)]/40"
-        >
-          <span
-            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--sa)]/12 text-[var(--sa)]"
-            aria-hidden="true"
-          >
-            <span class={`${subject.icon} text-xl`} />
-          </span>
-          <span class="min-w-0">
-            <span class="block truncate font-medium text-card-foreground">{subject.label}</span>
-            <span class="block text-xs text-muted-foreground">
-              {subject.count} {subject.count === 1 ? "platform" : "platforme"}
-            </span>
-          </span>
-        </a>
-      </li>
-    ))
-  }
+  {subjects.map((subject) => (
+  <li>
+    <a
+      href={`/fag/${subject.slug}`}
+      style={`--sa: ${subject.accent}`}
+      class="ui-card ui-focus group flex h-full items-center gap-3 p-3.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--sa)]/40"
+    >
+      <span
+        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--sa)]/12 text-[var(--sa)]"
+        aria-hidden="true"
+      >
+        <span class={`${subject.icon} text-xl`} />
+      </span>
+      <span class="min-w-0">
+        <span class="block truncate font-medium text-card-foreground">{subject.label}</span>
+        <span class="block text-xs text-muted-foreground">
+          {subject.count} {subject.count === 1 ? "platform" : "platforme"}
+        </span>
+      </span>
+    </a>
+  </li>
+))}
 </ul>
