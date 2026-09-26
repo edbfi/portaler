@@ -29,7 +29,7 @@
     "@iconify-json/lucide": "1.2.136",
     "@types/bun": "1.4.2",
     "svelte-check": "4.7.6",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "@typescript/native": "npm:typescript@7.0.2"
   }
 }
