@@ -2,11 +2,11 @@
   "name": "portaler",
   "version": "0.0.1",
   "dependencies": {
-    "@astrojs/svelte": "9.1.0",
+    "@astrojs/svelte": "9.1.1",
     "@fontsource-variable/bricolage-grotesque": "5.3.0",
     "@fontsource-variable/inter": "5.3.0",
     "@unocss/astro": "66.11.0",
-    "astro": "7.4.0",
+    "astro": "7.4.2",
     "svelte": "5.57.2",
     "unocss": "66.11.0"
   },
@@ -25,10 +25,10 @@
   "type": "module",
   "packageManager": "bun@1.4.2",
   "devDependencies": {
-    "@astrojs/check": "0.9.10",
+    "@astrojs/check": "0.9.12",
     "@biomejs/biome": "2.6.3",
-    "@iconify-json/lucide": "1.2.146",
-    "@types/bun": "1.4.3",
+    "@iconify-json/lucide": "1.2.147",
+    "@types/bun": "1.4.4",
     "svelte-check": "4.7.7",
     "typescript": "6.0.3",
     "@typescript/native": "npm:typescript@7.0.2"
