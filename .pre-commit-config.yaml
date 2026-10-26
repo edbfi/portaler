@@ -64,26 +64,26 @@ repos:
     hooks:
       - id: biome-check
         name: biome check
-        entry: bunx --no-install biome check --write --files-ignore-unknown=true --no-errors-on-unmatched
+        entry: bunx --bun --no-install biome check --write --files-ignore-unknown=true --no-errors-on-unmatched
         language: system
         types: [text]
         files: \.(js|mjs|cjs|ts|jsx|tsx|json|jsonc|css|astro|svelte)$
       - id: biome-migrate
         name: Migrate Biome configuration
-        entry: bunx --no-install biome migrate --write
+        entry: bunx --bun --no-install biome migrate --write
         language: system
         stages: [manual]
         pass_filenames: false
         always_run: true
       - id: tests
         name: Unit tests
-        entry: bun run test
+        entry: bun run --bun test
         language: system
         pass_filenames: false
         always_run: true
       - id: astro-check
         name: Astro type check
-        entry: bun run check
+        entry: bun run --bun check
         language: system
         pass_filenames: false
         stages: [pre-push, manual]
