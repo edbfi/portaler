@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/str_logo_icon.svg" alt="portaler logo" width="256" height="256">
+  <img src="src/assets/str_logo_icon.svg" alt="portaler logo" width="160" height="160">
 </p>
 
 <h1 align="center">portaler</h1>
@@ -7,7 +7,7 @@
 <p align="center"><strong>Digitale læremidler — skolens platforme, samlet ét sted</strong></p>
 
 <p align="center">
-  <a href="https://github.com/edbfi/portaler/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat" alt="License: AGPL-3.0"></a>
+  <a href="https://github.com/edbfi/portaler/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-AGPL--3.0--or--later-blue?style=flat" alt="License: AGPL-3.0-or-later"></a>
   <a href="https://github.com/oven-sh/bun"><img src="https://img.shields.io/badge/Bun-000000?style=flat&amp;logo=bun&amp;logoColor=white" alt="Bun"></a>
   <a href="https://github.com/withastro/astro"><img src="https://img.shields.io/badge/Astro-BC52EE?style=flat&amp;logo=astro&amp;logoColor=white" alt="Astro"></a>
   <a href="https://github.com/sveltejs/svelte"><img src="https://img.shields.io/badge/Svelte-FF3E00?style=flat&amp;logo=svelte&amp;logoColor=white" alt="Svelte"></a>
@@ -107,7 +107,10 @@ bun run preview  # preview the production build
 
 ## ⚖️ License
 
-Licensed under the AGPLv3 — see [LICENSE](LICENSE).
+Original code in Portaler is licensed under the GNU Affero General Public License,
+version 3 or (at your option) any later version (`AGPL-3.0-or-later`) — see
+[LICENSE](LICENSE). Third-party code, dependencies, and artwork retain their
+respective licenses and notices.
 
 <div align="center">
 	<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">
