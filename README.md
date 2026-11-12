@@ -1,18 +1,20 @@
-<div align="center">
-	<img src="src/assets/str_logo_icon.svg" alt="Portaler Logo" width="120" height="120">
-	<h1>Portaler</h1>
-	<p><strong>Digitale læremidler — skolens platforme, samlet ét sted</strong></p>
-	<p>En oversigt over skolens digitale læremidler, e-bøger og portaler, sorteret efter klassetrin og fag.</p>
-</div>
+<p align="center">
+  <img src="src/assets/str_logo_icon.svg" alt="portaler logo" width="256" height="256">
+</p>
 
-<div align="center">
+<h1 align="center">portaler</h1>
 
-[![Built with Astro](https://img.shields.io/badge/Astro-6-BC52EE.svg?logo=astro&logoColor=white)](https://astro.build)
-[![Bun](https://img.shields.io/badge/Bun-1.x-000?logo=bun&logoColor=white)](https://bun.sh)
-[![UnoCSS](https://img.shields.io/badge/UnoCSS-presetWind4-333?logo=unocss&logoColor=white)](https://unocss.dev)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+<p align="center"><strong>Digitale læremidler — skolens platforme, samlet ét sted</strong></p>
 
-</div>
+<p align="center">
+  <a href="https://github.com/edbfi/portaler/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat" alt="License: AGPL-3.0"></a>
+  <a href="https://github.com/oven-sh/bun"><img src="https://img.shields.io/badge/Bun-000000?style=flat&amp;logo=bun&amp;logoColor=white" alt="Bun"></a>
+  <a href="https://github.com/withastro/astro"><img src="https://img.shields.io/badge/Astro-BC52EE?style=flat&amp;logo=astro&amp;logoColor=white" alt="Astro"></a>
+  <a href="https://github.com/sveltejs/svelte"><img src="https://img.shields.io/badge/Svelte-FF3E00?style=flat&amp;logo=svelte&amp;logoColor=white" alt="Svelte"></a>
+  <a href="https://github.com/microsoft/TypeScript"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&amp;logo=typescript&amp;logoColor=white" alt="TypeScript"></a>
+</p>
+
+En oversigt over skolens digitale læremidler, e-bøger og portaler, sorteret efter klassetrin og fag.
 
 ---
 
@@ -29,7 +31,7 @@ also browse by subject, or search and filter within any list.
 
 ## 🧰 Tech stack
 
-- **[Astro 6](https://astro.build)** — static site, file-based routing, content layer.
+- **[Astro](https://astro.build)** — static site, file-based routing, content layer.
 - **[Bun](https://bun.sh)** — package manager and task runner.
 - **[UnoCSS](https://unocss.dev)** with `presetWind4` — atomic styling + design tokens.
 - **[Svelte 5](https://svelte.dev)** — the theme toggle island (runes).
